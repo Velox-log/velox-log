@@ -1,0 +1,102 @@
+generator client {
+  provider = "prisma-client-js"
+  output   = "../src/generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id        String   @id @default(cuid()) // internal DB user id
+  clerkId   String   @unique // maps to Clerk's user id
+  name      String?
+  email     String   @unique
+  role      Role     @default(USER)
+  company   String?
+  phone     String?
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  shipments    Shipment[]
+  trackingLogs TrackingLog[]
+}
+
+model Sender {
+  id        String   @id @default(cuid())
+  name      String
+  company   String?
+  phone     String
+  email     String?
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  shipments Shipment[]
+}
+
+model Shipment {
+  id                String         @id @default(cuid())
+  trackingId        String         @unique
+  status            ShipmentStatus @default(PENDING)
+  origin            String
+  destination       String
+  estimatedDelivery DateTime
+  actualDelivery    DateTime?
+  service           String
+  weight            String
+  dimensions        String
+  currentLocation   String
+  nextUpdate        String?
+
+  senderId String?
+  sender   Sender?   @relation(fields: [senderId], references: [id])
+
+  recipientName    String
+  recipientCompany String?
+  recipientAddress String
+  recipientPhone   String
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  events TrackingEvent[]
+}
+
+
+model TrackingEvent {
+  id          String   @id @default(cuid())
+  shipmentId  String
+  status      String
+  description String
+  location    String
+  timestamp   DateTime @default(now())
+  completed   Boolean  @default(false)
+
+  shipment Shipment @relation(fields: [shipmentId], references: [id], onDelete: Cascade)
+
+  createdAt DateTime @default(now())
+}
+
+model TrackingLog {
+  id         String   @id @default(cuid())
+  userId     String
+  trackingId String
+  timestamp  DateTime @default(now())
+
+  user User @relation(fields: [userId], references: [id])
+}
+
+enum Role {
+  USER
+  ADMIN
+  SUPER_ADMIN
+}
+
+enum ShipmentStatus {
+  PENDING
+  IN_TRANSIT
+  DELIVERED
+  DELAYED
+  EXCEPTION
+}
