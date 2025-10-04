@@ -3,8 +3,7 @@ import { motion } from 'framer-motion';
 import { useInView } from 'framer-motion';
 import { useRef } from 'react';
 import {
-  Truck, Plane, Ship, Package, Warehouse, Clock,
-  Shield, ArrowRight, Globe,
+  Truck, Plane, Ship, Package, Warehouse, ArrowRight, Globe,
 } from "lucide-react";
 import Link from "next/link"
 
@@ -78,13 +77,13 @@ const Services = () => {
   };
 
   const cardVariants = {
-    hidden: { opacity: 0, y: 30 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: { duration: 0.6, ease: "easeOut" }
-    }
-  };
+  hidden: { opacity: 0, y: 30 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.6, ease: "easeOut" as const },
+  },
+};
 
   return (
     <section className="py-20 bg-gray-50" ref={ref}>

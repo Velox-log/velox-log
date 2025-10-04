@@ -1,4 +1,4 @@
-import { NextResponse } from "next/server";
+import { NextRequest, NextResponse } from "next/server";
 import { prisma } from "@/../lib/prisma";
 
 interface TrackingEvent {
@@ -11,13 +11,12 @@ interface TrackingEvent {
 }
 
 export async function GET(
-  _req: Request,
-  context: { params: { trackingId: string } }
+  _req: NextRequest,
+  context: { params: Promise<{ trackingId: string }> }
 ) {
-  try {
-    const { trackingId } = context.params;
+  const { trackingId } = await context.params; // 👈 await params
 
-    // Find shipment with events
+  try {
     const shipment = await prisma.shipment.findUnique({
       where: { trackingId },
       include: {
@@ -38,7 +37,6 @@ export async function GET(
       return NextResponse.json({ error: "Shipment not found" }, { status: 404 });
     }
 
-    // Format response
     const response = {
       trackingId: shipment.trackingId,
       status: shipment.status.toLowerCase().replace("_", "-"),
@@ -59,8 +57,8 @@ export async function GET(
             phone: shipment.sender.phone || "N/A",
           }
         : {
-            name: "LogiFlow Admin",
-            company: "LogiFlow",
+            name: "Velox Admin",
+            company: "Velox Logistics",
             phone: "(555) 123-4567",
           },
       recipient: {
@@ -91,6 +89,9 @@ export async function GET(
     return NextResponse.json(response);
   } catch (error) {
     console.error("Tracking API Error:", error);
-    return NextResponse.json({ error: "Internal server error" }, { status: 500 });
+    return NextResponse.json(
+      { error: "Internal server error" },
+      { status: 500 }
+    );
   }
 }
