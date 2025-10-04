@@ -79,7 +79,7 @@ export async function POST(request: Request) {
       message: 'Tracking updated successfully',
       event: trackingEvent,
     });
-  } catch (error) {
+  } catch {
     return NextResponse.json(
       { error: 'Internal server error' },
       { status: 500 }

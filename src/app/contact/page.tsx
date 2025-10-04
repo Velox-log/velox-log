@@ -12,12 +12,8 @@ import {
   MessageSquare,
   CheckCircle,
   AlertCircle,
-  Globe,
-  Truck,
   Package,
   HeadphonesIcon,
-  Calendar,
-  ArrowRight
 } from 'lucide-react';
 
 interface ContactForm {

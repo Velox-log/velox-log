@@ -1,6 +1,15 @@
 import { NextResponse } from "next/server";
 import { prisma } from "@/../lib/prisma";
 
+interface TrackingEvent {
+  id: string;
+  status: string;
+  description: string;
+  location: string;
+  timestamp: Date;
+  completed: boolean;
+}
+
 export async function GET(
   _req: Request,
   context: { params: { trackingId: string } }
@@ -60,7 +69,7 @@ export async function GET(
         address: shipment.recipientAddress,
         phone: shipment.recipientPhone,
       },
-      events: shipment.events.map((event: any) => ({
+      events: shipment.events.map((event: TrackingEvent) => ({
         id: event.id,
         status: event.status,
         description: event.description,

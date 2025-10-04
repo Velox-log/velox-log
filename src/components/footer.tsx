@@ -1,7 +1,6 @@
 // components/Footer.tsx
 import React from 'react';
 import { 
-  Truck, 
   Phone, 
   Mail, 
   MapPin, 

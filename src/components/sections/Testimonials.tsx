@@ -57,7 +57,7 @@ const TestimonialsSection: React.FC = () => {
       position: 'Supply Chain Director',
       company: 'TechCorp Industries',
       rating: 5,
-      quote: 'Veloxlogistics transformed our supply chain operations. Their real-time tracking and reliable delivery times have improved our customer satisfaction by 40%. The team is incredibly responsive and always goes above and beyond.',
+      quote: "Veloxlogistics transformed our supply chain operations. Their real-time tracking and reliable delivery times have improved our customer satisfaction by 40%. The team is incredibly responsive and always goes above and beyond.",
       industry: 'Technology',
       shipmentVolume: '500+ monthly shipments'
     },
@@ -67,7 +67,7 @@ const TestimonialsSection: React.FC = () => {
       position: 'Operations Manager',
       company: 'Global Fashion Co.',
       rating: 5,
-      quote: 'Working with Veloxlogistics for our international shipping has been a game-changer. They handle everything from customs to final delivery seamlessly. Our products reach customers faster than ever before.',
+      quote: "Working with Veloxlogistics for our international shipping has been a game-changer. They handle everything from customs to final delivery seamlessly. Our products reach customers faster than ever before.",
       industry: 'Fashion & Retail',
       shipmentVolume: '1000+ monthly shipments'
     },
@@ -77,7 +77,7 @@ const TestimonialsSection: React.FC = () => {
       position: 'CEO',
       company: 'StartupXYZ',
       rating: 5,
-      quote: 'As a growing startup, we needed a logistics partner that could scale with us. Veloxlogistics has been that partner. Their flexible solutions and competitive pricing have been crucial to our growth.',
+      quote: "As a growing startup, we needed a logistics partner that could scale with us. Veloxlogistics has been that partner. Their flexible solutions and competitive pricing have been crucial to our growth.",
       industry: 'E-commerce',
       shipmentVolume: '200+ monthly shipments'
     },
@@ -87,7 +87,7 @@ const TestimonialsSection: React.FC = () => {
       position: 'Logistics Coordinator',
       company: 'MedSupply Plus',
       rating: 5,
-      quote: 'In the medical supply industry, reliability is everything. Veloxlogistics understands this and consistently delivers our temperature-sensitive products on time and in perfect condition.',
+      quote: "In the medical supply industry, reliability is everything. Veloxlogistics understands this and consistently delivers our temperature-sensitive products on time and in perfect condition.",
       industry: 'Healthcare',
       shipmentVolume: '300+ monthly shipments'
     },
@@ -97,7 +97,7 @@ const TestimonialsSection: React.FC = () => {
       position: 'Import/Export Manager',
       company: 'Global Trade Hub',
       rating: 5,
-      quote: 'Veloxlogistic\'s international expertise is unmatched. They navigate complex regulations and ensure our shipments clear customs smoothly. Their transparency and communication are exceptional.',
+      quote: "Veloxlogistic's international expertise is unmatched. They navigate complex regulations and ensure our shipments clear customs smoothly. Their transparency and communication are exceptional.",
       industry: 'Import/Export',
       shipmentVolume: '800+ monthly shipments'
     }
@@ -159,8 +159,8 @@ const TestimonialsSection: React.FC = () => {
           </h2>
           
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Don't just take our word for it. Here's what our customers say about 
-            their experience with Veloxlogistic's logistics solutions.
+            Don&apos;t just take our word for it. Here&apos;s what our customers say about 
+            their experience with Veloxlogistic&apos;s logistics solutions.
           </p>
         </motion.div>
 
@@ -202,7 +202,7 @@ const TestimonialsSection: React.FC = () => {
 
                 {/* Quote */}
                 <blockquote className="text-xl lg:text-2xl text-gray-700 leading-relaxed mb-8 italic">
-                  "{testimonials[currentSlide].quote}"
+                  {testimonials[currentSlide].quote}
                 </blockquote>
 
                 {/* Author Info */}

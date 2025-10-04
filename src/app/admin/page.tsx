@@ -1,6 +1,6 @@
 // app/admin/page.tsx
 "use client";
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import { useUser } from "@clerk/nextjs";
 import { useRouter } from "next/navigation";
 import {
@@ -8,7 +8,6 @@ import {
   Plus,
   Search,
   Edit,
-  Eye,
   Truck,
   CheckCircle,
   Copy,
@@ -103,16 +102,7 @@ const AdminDashboard: React.FC = () => {
     location: "",
   });
 
-  // Check if user is admin
-  useEffect(() => {
-    if (isLoaded && user?.publicMetadata?.role !== "admin") {
-      router.push("/dashboard");
-    } else {
-      fetchShipments();
-    }
-  }, [isLoaded, user]);
-
-  const fetchShipments = async () => {
+  const fetchShipments = useCallback(async () => {
     try {
       const response = await fetch("/api/admin/shipments");
       if (!response.ok) {
@@ -120,12 +110,21 @@ const AdminDashboard: React.FC = () => {
       }
       const data = await response.json();
       setShipments(data);
-    } catch (error) {
+    } catch {
       alert("Failed to load shipments. Please refresh the page.");
     } finally {
       setLoading(false);
     }
-  };
+  }, []);
+
+  // Check if user is admin
+  useEffect(() => {
+    if (isLoaded && user?.publicMetadata?.role !== "admin") {
+      router.push("/dashboard");
+    } else {
+      fetchShipments();
+    }
+  }, [isLoaded, user, router, fetchShipments]);
 
   const generateTrackingId = (): string => {
     const prefix = "LF";
@@ -187,7 +186,7 @@ const AdminDashboard: React.FC = () => {
       } else {
         alert("Failed to create shipment");
       }
-    } catch (error) {
+    } catch {
       alert("Error creating shipment");
     } finally {
       setCreating(false);
@@ -209,7 +208,7 @@ const AdminDashboard: React.FC = () => {
       } else {
         alert("Failed to delete shipment.");
       }
-    } catch (error) {
+    } catch {
       alert("Error deleting shipment.");
     }
   };
@@ -218,7 +217,7 @@ const AdminDashboard: React.FC = () => {
   const handleUpdateTracking = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!selectedShipment) return;
-            setUpdating(true); // Start loading
+    setUpdating(true); // Start loading
     try {
       const response = await fetch("/api/admin/update-tracking", {
         method: "POST",
@@ -237,8 +236,10 @@ const AdminDashboard: React.FC = () => {
       } else {
         alert("Failed to update tracking");
       }
-    } catch (error) {
+    } catch {
       alert("Error updating tracking");
+    } finally {
+      setUpdating(false);
     }
   };
 
@@ -954,7 +955,6 @@ const AdminDashboard: React.FC = () => {
                     </>
                   )}
                 </button>
-
               </div>
             </form>
           </div>

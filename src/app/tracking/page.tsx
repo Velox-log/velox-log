@@ -9,15 +9,12 @@ import {
   Clock,
   MapPin,
   Calendar,
-  User,
   Phone,
   Mail,
   Copy,
   Download,
   AlertCircle,
-  ArrowRight,
-  Navigation,
-  Plane
+  Navigation
 } from 'lucide-react';
 
 interface TrackingEvent {
@@ -89,7 +86,7 @@ const TrackingPage: React.FC = () => {
         setError('Tracking ID not found. Please check your tracking number and try again.');
       setShipmentData(null);
       }
-    }catch (error) {
+    }catch {
     setError('Network error. Please try again.');
   } finally {
     setLoading(false);

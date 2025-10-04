@@ -5,8 +5,8 @@ import { useInView } from 'framer-motion';
 import { useRef } from 'react';
 import { useCountUp } from '@/hooks/useCountUp';
 import { 
-  Award, Users, Globe, TrendingUp, Shield, Clock,
-  Heart, Target, CheckCircle
+  Users, Shield, Clock,
+  Heart, Target
 } from 'lucide-react';
 
 // Add this component for animated stats
@@ -97,7 +97,7 @@ const AboutSection: React.FC = () => {
           </h2>
           
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            For over a decade, we've been the trusted logistics partner for businesses 
+            For over a decade, we&apos;ve been the trusted logistics partner for businesses 
             of all sizes, delivering excellence in every shipment.
           </p>
         </motion.div>
