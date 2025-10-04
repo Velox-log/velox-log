@@ -58,7 +58,7 @@ export async function POST(request: Request) {
     // Send confirmation email to customer
     await resend.emails.send({
       from: 'Velox Logistics <onboarding@resend.dev>',
-      to: 'veloxlogistics0@gmail.com',
+      to: email,
       subject: 'We received your message - Velox Logistics',
       html: `
         <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">

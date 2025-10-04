@@ -1,7 +1,7 @@
 generator client {
   provider = "prisma-client-js"
-  output   = "../src/generated/prisma"
 }
+
 
 datasource db {
   provider = "postgresql"
@@ -19,7 +19,7 @@ model User {
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 
-  shipments    Shipment[]
+  shipments    Shipment[]   // ✅ one-to-many relation
   trackingLogs TrackingLog[]
 }
 
@@ -49,8 +49,13 @@ model Shipment {
   currentLocation   String
   nextUpdate        String?
 
+  // ✅ relation to Sender
   senderId String?
   sender   Sender?   @relation(fields: [senderId], references: [id])
+
+  // ✅ optional relation to User
+  userId String?
+  user   User? @relation(fields: [userId], references: [id])
 
   recipientName    String
   recipientCompany String?
@@ -62,7 +67,6 @@ model Shipment {
 
   events TrackingEvent[]
 }
-
 
 model TrackingEvent {
   id          String   @id @default(cuid())

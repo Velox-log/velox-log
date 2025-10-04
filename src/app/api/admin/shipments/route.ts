@@ -1,3 +1,4 @@
+// app/api/admin/shipments/route.ts
 import { NextResponse } from "next/server";
 import { auth } from "@clerk/nextjs/server";
 import { currentUser } from "@clerk/nextjs/server";
@@ -18,6 +19,7 @@ export async function GET() {
             name: true,
             email: true,
             company: true,
+            phone: true,
           },
         },
         events: {
@@ -30,6 +32,7 @@ export async function GET() {
 
     return NextResponse.json(shipments);
   } catch (error) {
+    console.error("Error fetching shipments:", error);
     return NextResponse.json({ error: "Internal server error" }, { status: 500 });
   }
 }
@@ -42,7 +45,6 @@ export async function POST(req: Request) {
       return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
     }
 
-    // Admin check
     const user = await currentUser();
     if (!user || user.publicMetadata?.role !== "admin") {
       return NextResponse.json(
@@ -67,6 +69,7 @@ export async function POST(req: Request) {
       senderName,
       senderCompany,
       senderPhone,
+      senderEmail,
     } = body;
 
     if (
@@ -83,18 +86,17 @@ export async function POST(req: Request) {
       return NextResponse.json({ error: "Missing required fields" }, { status: 400 });
     }
 
-    // Create sender (can be linked to your User table if you want relationships)
-    const sender = await prisma.user.create({
+    // Create sender
+    const sender = await prisma.sender.create({
       data: {
         name: senderName,
         company: senderCompany || "",
         phone: senderPhone,
-        email: "", // optional if you don’t collect sender emails
-        clerkId: userId, // Add clerkId as required by UserCreateInput
+        email: senderEmail || "",
       },
     });
 
-    // Create shipment WITH senderId
+    // Create shipment
     const shipment = await prisma.shipment.create({
       data: {
         trackingId,
@@ -115,7 +117,6 @@ export async function POST(req: Request) {
       },
     });
 
-    // Initial tracking event
     await prisma.trackingEvent.create({
       data: {
         shipmentId: shipment.id,
@@ -135,6 +136,7 @@ export async function POST(req: Request) {
       },
     });
   } catch (error) {
+    console.error("Error creating shipment:", error);
     return NextResponse.json({ error: "Internal server error" }, { status: 500 });
   }
 }
