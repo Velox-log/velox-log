@@ -76,7 +76,7 @@ export async function POST(request: Request) {
             <p style="white-space: pre-wrap;">${message}</p>
           </div>
 
-          <p>If you need immediate assistance, please call us at <strong>+1 (555) 123-4567</strong>.</p>
+          <p>If you need immediate assistance, please call us at <strong>+447 (853) 756-734</strong>.</p>
 
           <p>Best regards,<br/>
           <strong>Velox Logistics Team</strong></p>
@@ -85,8 +85,8 @@ export async function POST(request: Request) {
           
           <p style="color: #6b7280; font-size: 12px;">
             Velox Logistics | 123 Logistics Ave, New York, NY 10001<br/>
-            <a href="mailto:info@Veloxlogistics0@gmail.com" style="color: #1e40af;">info@Veloxlogistics0@gmail.com</a> | 
-            <a href="tel:+15551234567" style="color: #1e40af;">+1 (555) 123-4567</a>
+            <a href="mailto:veloxlogistics0@gmail.com" style="color: #1e40af;">veloxlogistics0@gmail.com</a> | 
+            <a href="tel:+4478537567734" style="color: #1e40af;">+447 (853) 756-734</a>
           </p>
         </div>
       `,

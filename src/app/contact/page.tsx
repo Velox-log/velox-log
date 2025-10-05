@@ -62,7 +62,7 @@ const ContactPage: React.FC = () => {
       name: 'Headquarters',
       address: '123 Logistics Ave, Business District, New York, NY 10001',
       phone: '+1 (555) 123-4567',
-      email: 'info@Veloxlogistics0@gmail.com',
+      email: 'veloxlogistics0@gmail.com',
       hours: '8:00 AM - 6:00 PM',
       timezone: 'EST',
       services: ['Ground Shipping', 'Air Freight', 'Warehousing']
@@ -72,7 +72,7 @@ const ContactPage: React.FC = () => {
       name: 'Central Europe Distribution',
       address: '125 Avenue des Champs-Élysées, 75008 Paris, France',
       phone: '+447 (853) 756-734',
-      email: 'europe@Veloxlogistics0@gmail.com',
+      email: 'europe@veloxlogistics.site',
       hours: '9:00 AM - 7:00 PM',
       timezone: 'CET',
       services: ['Ground Shipping', 'Warehousing', 'Express Delivery']
@@ -108,42 +108,41 @@ const ContactPage: React.FC = () => {
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
-  e.preventDefault();
-  setLoading(true);
-  setError('');
+    e.preventDefault();
+    setLoading(true);
+    setError('');
 
-  // Validation
-  if (!formData.firstName || !formData.lastName || !formData.email || !formData.message) {
-    setError('Please fill in all required fields.');
-    setLoading(false);
-    return;
-  }
-
-  if (!formData.agreeToTerms) {
-    setError('Please agree to the terms and conditions.');
-    setLoading(false);
-    return;
-  }
-
-  try {
-    const response = await fetch('/api/contact', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(formData),
-    });
-
-    if (!response.ok) {
-      throw new Error('Failed to send message');
+    // Validation
+    if (!formData.firstName || !formData.lastName || !formData.email || !formData.message) {
+      setError('Please fill in all required fields.');
+      setLoading(false);
+      return;
     }
 
-    setSubmitted(true);
-  } catch (error) {
+    if (!formData.agreeToTerms) {
+      setError('Please agree to the terms and conditions.');
+      setLoading(false);
+      return;
+    }
 
-    setError('Failed to send message. Please try again or contact us directly.');
-  } finally {
-    setLoading(false);
-  }
-};
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData),
+      });
+
+      if (!response.ok) {
+        throw new Error('Failed to send message');
+      }
+
+      setSubmitted(true);
+    } catch {
+      setError('Failed to send message. Please try again or contact us directly.');
+    } finally {
+      setLoading(false);
+    }
+  };
 
   if (submitted) {
     return (
@@ -155,7 +154,7 @@ const ContactPage: React.FC = () => {
             </div>
             <h2 className="text-2xl font-bold text-gray-900 mb-4">Message Sent!</h2>
             <p className="text-gray-600 mb-6">
-              Thank you for contacting Veloxlogistics. We've received your message and will get back to you within 24 hours.
+              Thank you for contacting Velox Logistics. We've received your message and will get back to you within 24 hours.
             </p>
             <button
               onClick={() => {
@@ -199,7 +198,7 @@ const ContactPage: React.FC = () => {
             Get In Touch
           </h1>
           <p className="text-xl md:text-2xl text-primary-light mb-8 leading-relaxed">
-            Ready to optimize your logistics? Let's discuss how Veloxlogistics can help
+            Ready to optimize your logistics? Let's discuss how Velox Logistics can help
             streamline your shipping and supply chain needs.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-6">
@@ -209,7 +208,7 @@ const ContactPage: React.FC = () => {
             </div>
             <div className="flex items-center space-x-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-6 py-3">
               <Mail className="w-5 h-5" />
-              <span>info@Veloxlogistics0@gmail.com</span>
+              <span>veloxlogistics0@gmail.com</span>
             </div>
           </div>
         </div>
@@ -458,7 +457,7 @@ const ContactPage: React.FC = () => {
                     </div>
                     <div>
                       <div className="font-medium text-gray-900">Email Us</div>
-                      <div className="text-gray-600">info@Veloxlogistics0@gmail.com</div>
+                      <div className="text-gray-600">veloxlogistics0@gmail.com</div>
                     </div>
                   </div>
                   <div className="flex items-center space-x-3">
@@ -498,8 +497,6 @@ const ContactPage: React.FC = () => {
                   ))}
                 </div>
               </div>
-
-
             </div>
           </div>
         </div>
