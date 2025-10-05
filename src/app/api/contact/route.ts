@@ -27,7 +27,7 @@ export async function POST(request: Request) {
 
     // Send email to your company
     await resend.emails.send({
-      from: 'Velox Logistics <onboarding@resend.dev>',
+      from: 'Velox Logistics <noreply@veloxlogistics.site>',
       to: 'veloxlogistics0@gmail.com',
       subject: `New Contact Form: ${subject || 'General Inquiry'}`,
       html: `
@@ -57,7 +57,7 @@ export async function POST(request: Request) {
 
     // Send confirmation email to customer
     await resend.emails.send({
-      from: 'Velox Logistics <onboarding@resend.dev>',
+      from: 'Velox Logistics <noreply@veloxlogistics.site>',
       to: email,
       subject: 'We received your message - Velox Logistics',
       html: `

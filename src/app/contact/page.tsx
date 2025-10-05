@@ -68,20 +68,10 @@ const ContactPage: React.FC = () => {
       services: ['Ground Shipping', 'Air Freight', 'Warehousing']
     },
     {
-      id: 'west-coast',
-      name: 'West Coast Hub',
-      address: '456 Pacific Blvd, Los Angeles, CA 90210',
-      phone: '+1 (555) 234-5678',
-      email: 'west@Veloxlogistics0@gmail.com',
-      hours: '7:00 AM - 5:00 PM',
-      timezone: 'PST',
-      services: ['Ocean Freight', 'Express Delivery', 'Global Logistics']
-    },
-    {
       id: 'europe-central',
       name: 'Central Europe Distribution',
       address: '125 Avenue des Champs-Élysées, 75008 Paris, France',
-      phone: '+33 1 42 56 78 90',
+      phone: '+447 (853) 756-734',
       email: 'europe@Veloxlogistics0@gmail.com',
       hours: '9:00 AM - 7:00 PM',
       timezone: 'CET',
@@ -215,7 +205,7 @@ const ContactPage: React.FC = () => {
           <div className="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-6">
             <div className="flex items-center space-x-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-6 py-3">
               <Phone className="w-5 h-5" />
-              <span>+1 (555) 123-4567</span>
+              <span>+447 (853) 756-734</span>
             </div>
             <div className="flex items-center space-x-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-6 py-3">
               <Mail className="w-5 h-5" />
@@ -459,7 +449,7 @@ const ContactPage: React.FC = () => {
                     </div>
                     <div>
                       <div className="font-medium text-gray-900">Call Us</div>
-                      <div className="text-gray-600">+1 (555) 123-4567</div>
+                      <div className="text-gray-600">+447 (853) 756-734</div>
                     </div>
                   </div>
                   <div className="flex items-center space-x-3">
