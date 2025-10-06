@@ -75,7 +75,7 @@ const ContactPage: React.FC = () => {
   email: 'uk@veloxlogistics.site',
   hours: '9:00 AM - 7:00 PM',
   timezone: 'GMT',
-  services: ['Ground Shipping', 'Warehousing', 'Express Delivery']
+  services: ['Ground Shipping', 'Warehousing', 'Express Delivery', 'Air Freight']
 }
 
   ];
