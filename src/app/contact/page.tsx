@@ -58,7 +58,7 @@ const ContactPage: React.FC = () => {
 
   const offices: Office[] = [
     {
-      id: 'headquarters',
+      id: 'Branch-US',
       name: 'Headquarters',
       address: '456 Commerce Boulevard, Louisville, Kentucky, KY 40202',
       phone: '+1 (555) 123-4567',
@@ -68,15 +68,16 @@ const ContactPage: React.FC = () => {
       services: ['Ground Shipping', 'Air Freight', 'Warehousing']
     },
     {
-      id: 'europe-central',
-      name: 'Central Europe Distribution',
-      address: '125 Avenue des Champs-Élysées, 75008 Paris, France',
-      phone: '+447 (853) 756-734',
-      email: 'europe@veloxlogistics.site',
-      hours: '9:00 AM - 7:00 PM',
-      timezone: 'CET',
-      services: ['Ground Shipping', 'Warehousing', 'Express Delivery']
-    }
+  id: 'headquarters',
+  name: 'United Kingdom Headquarters',
+  address: '221B Baker Street, London, NW1 6XE, United Kingdom',
+  phone: '+44 20 7946 0958',
+  email: 'uk@veloxlogistics.site',
+  hours: '9:00 AM - 7:00 PM',
+  timezone: 'GMT',
+  services: ['Ground Shipping', 'Warehousing', 'Express Delivery']
+}
+
   ];
 
   const serviceOptions = [

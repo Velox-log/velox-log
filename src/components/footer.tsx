@@ -153,8 +153,9 @@ const Footer: React.FC = () => {
                 <MapPin className="w-5 h-5 text-secondary mt-1" />
                 <span className="text-gray-300">
                   <strong>Head Office:</strong><br />
-                  125 Avenue des Champs-Élysées,<br />
-                  75008 Paris, France
+221B Baker Street,<br />
+London, NW1 6XE, United Kingdom
+
                   <br /><br />
                   <strong>Branch Office (US):</strong><br />
                   456 Commerce Boulevard<br />
