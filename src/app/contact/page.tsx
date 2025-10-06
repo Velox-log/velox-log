@@ -201,16 +201,24 @@ const ContactPage: React.FC = () => {
             Ready to optimize your logistics? Let's discuss how Velox Logistics can help
             streamline your shipping and supply chain needs.
           </p>
-          <div className="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-6">
-            <div className="flex items-center space-x-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-6 py-3">
-              <Phone className="w-5 h-5" />
-              <span>+447 (853) 756-734</span>
-            </div>
-            <div className="flex items-center space-x-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-6 py-3">
-              <Mail className="w-5 h-5" />
-              <span>veloxlogistics0@gmail.com</span>
-            </div>
-          </div>
+         <div className="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-6">
+  <a 
+    href="https://wa.me/447853756734" 
+    target="_blank" 
+    rel="noopener noreferrer"
+    className="flex items-center space-x-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-6 py-3 hover:bg-white/20 transition-colors cursor-pointer"
+  >
+    <Phone className="w-5 h-5" />
+    <span>+447 (853) 756-734</span>
+  </a>
+  <a 
+    href="mailto:veloxlogistics0@gmail.com"
+    className="flex items-center space-x-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-6 py-3 hover:bg-white/20 transition-colors cursor-pointer"
+  >
+    <Mail className="w-5 h-5" />
+    <span>veloxlogistics0@gmail.com</span>
+  </a>
+</div>
         </div>
       </section>
 
