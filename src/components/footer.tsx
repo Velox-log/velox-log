@@ -15,6 +15,7 @@ import {
   Award,
   Globe
 } from 'lucide-react';
+import { FaWhatsapp } from "react-icons/fa";
 
 interface FooterLink {
   label: string;
@@ -142,7 +143,8 @@ const Footer: React.FC = () => {
             {/* Contact Info */}
             <div className="space-y-4">
               <div className="flex items-center space-x-3">
-                <Phone className="w-5 h-5 text-secondary" />
+                             <FaWhatsapp className="w-5 h-5 text-green-500" />
+               
                 <span className="text-gray-300">+447 (853) 756-734</span>
               </div>
               <div className="flex items-center space-x-3">

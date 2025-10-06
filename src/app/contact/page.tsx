@@ -15,6 +15,7 @@ import {
   Package,
   HeadphonesIcon,
 } from 'lucide-react';
+import { FaWhatsapp } from "react-icons/fa";
 
 interface ContactForm {
   firstName: string;
@@ -209,7 +210,7 @@ const ContactPage: React.FC = () => {
               rel="noopener noreferrer"
               className="flex items-center space-x-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-6 py-3 hover:bg-white/20 transition-colors cursor-pointer"
             >
-              <Phone className="w-5 h-5" />
+              <FaWhatsapp className="w-5 h-5 text-green-500" />
               <span>+447 (853) 756-734</span>
             </a>
             <a 
@@ -458,10 +459,11 @@ const ContactPage: React.FC = () => {
                     className="flex items-center space-x-3 hover:bg-gray-50 p-2 rounded-lg transition-colors"
                   >
                     <div className="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center">
-                      <Phone className="w-5 h-5 text-primary" />
+                                   <FaWhatsapp className="w-5 h-5 text-green-500" />
+
                     </div>
                     <div>
-                      <div className="font-medium text-gray-900">Call Us</div>
+                     
                       <div className="text-gray-600">+447 (853) 756-734</div>
                     </div>
                   </a>
