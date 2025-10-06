@@ -59,7 +59,7 @@ const ContactPage: React.FC = () => {
   const offices: Office[] = [
     {
       id: 'Branch-US',
-      name: 'Headquarters',
+      name: 'US',
       address: '456 Commerce Boulevard, Louisville, Kentucky, KY 40202',
       phone: '+1 (555) 123-4567',
       email: 'veloxlogistics0@gmail.com',
