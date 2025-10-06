@@ -118,7 +118,7 @@ const downloadReport = async () => {
   doc.setFontSize(28);
   doc.setTextColor(255, 255, 255);
   doc.setFont("helvetica", "bold");
-  doc.text(" VELOXLOGISTICS TRACKING SYSTEM", pageWidth / 2, yPos, { align: "center" });
+  doc.text("VELOXLOGISTICS", pageWidth / 2, yPos, { align: "center" });
 
   yPos += 6;
   doc.setFontSize(10);
