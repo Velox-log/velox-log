@@ -107,12 +107,12 @@ const Hero = () => {
             className="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-6 mb-12"
           >
             <motion.a
-              href="/quote"
+              href="/tracking"
               className="bg-secondary hover:bg-secondary-dark text-white font-semibold px-8 py-4 rounded-lg transition-all duration-200 flex items-center space-x-2 shadow-lg hover:shadow-xl"
               whileHover={{ scale: 1.05, y: -2 }}
               whileTap={{ scale: 0.95 }}
             >
-              <span>Get Free Quote</span>
+              <span>Track Parcel</span>
               <ArrowRight className="w-5 h-5" />
             </motion.a>
 
