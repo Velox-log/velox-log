@@ -1,9 +1,9 @@
 // components/Footer.tsx
 import React from 'react';
-import { 
-  Phone, 
-  Mail, 
-  MapPin, 
+import {
+  Phone,
+  Mail,
+  MapPin,
   Clock,
   Facebook,
   Twitter,
@@ -125,17 +125,17 @@ const Footer: React.FC = () => {
       {/* Main Footer Content */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="grid grid-cols-1 lg:grid-cols-6 gap-12">
-          
+
           {/* Company Info */}
           <div className="lg:col-span-2">
             <div className="flex items-center space-x-3 mb-6">
               <div className="bg-primary p-2 rounded-lg">
-                 Velox<span className="text-secondary">logistics</span>
+                Velox<span className="text-secondary">logistics</span>
               </div>
             </div>
-            
+
             <p className="text-gray-400 mb-6 leading-relaxed">
-              Your trusted logistics partner for fast, reliable, and secure shipping solutions. 
+              Your trusted logistics partner for fast, reliable, and secure shipping solutions.
               Moving your business forward with excellence in every delivery.
             </p>
 
@@ -152,11 +152,17 @@ const Footer: React.FC = () => {
               <div className="flex items-start space-x-3">
                 <MapPin className="w-5 h-5 text-secondary mt-1" />
                 <span className="text-gray-300">
+                  <strong>Head Office (UK):</strong><br />
+                  45 Bishopsgate, London EC2N 4AH,<br />
+                  United Kingdom
+                  <br /><br />
+                  <strong>Branch Office (US):</strong><br />
                   123 Logistics Ave<br />
                   Business District<br />
                   New York, NY 10001
                 </span>
               </div>
+
               <div className="flex items-center space-x-3">
                 <Clock className="w-5 h-5 text-secondary" />
                 <span className="text-gray-300">24/7 Customer Support</span>
@@ -221,7 +227,7 @@ const Footer: React.FC = () => {
             <div className="text-gray-400 text-sm">
               © 2024 Veloxlogistics. All rights reserved.
             </div>
-            
+
             <div className="flex flex-wrap justify-center space-x-6 text-sm">
               <a href="/privacy" className="text-gray-400 hover:text-white transition-colors">
                 Privacy Policy
