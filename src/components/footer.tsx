@@ -31,55 +31,55 @@ const Footer: React.FC = () => {
     {
       title: 'Services',
       links: [
-        { label: 'Ground Shipping', href: '/services/ground-shipping' },
-        { label: 'Air Freight', href: '/services/air-freight' },
-        { label: 'Ocean Freight', href: '/services/ocean-freight' },
-        { label: 'Warehousing', href: '/services/warehousing' },
-        { label: 'Express Delivery', href: '/services/express-delivery' },
-        { label: 'Global Logistics', href: '/services/global-logistics' }
+        { label: 'Ground Shipping', href: '#' },
+        { label: 'Air Freight', href: '#' },
+        { label: 'Ocean Freight', href: '#' },
+        { label: 'Warehousing', href: '#' },
+        { label: 'Express Delivery', href: '#' },
+        { label: 'Global Logistics', href: '#' }
       ]
     },
     {
       title: 'Company',
       links: [
-        { label: 'About Us', href: '/about' },
-        { label: 'Our Story', href: '/story' },
-        { label: 'Leadership', href: '/leadership' },
-        { label: 'Careers', href: '/careers' },
-        { label: 'News & Media', href: '/news' },
-        { label: 'Locations', href: '/locations' }
+        { label: 'About Us', href: '#' },
+        { label: 'Our Story', href: '#' },
+        { label: 'Leadership', href: '#' },
+        { label: 'Careers', href: '#' },
+        { label: 'News & Media', href: '#' },
+        { label: 'Locations', href: '#' }
       ]
     },
     {
       title: 'Support',
       links: [
         { label: 'Track Package', href: '/track' },
-        { label: 'Help Center', href: '/help' },
+        { label: 'Help Center', href: '#' },
         { label: 'Contact Us', href: '/contact' },
-        { label: 'Customer Portal', href: '/portal' },
-        { label: 'Shipping Guide', href: '/guide' },
-        { label: 'API Documentation', href: '/api-docs' }
+        { label: 'Customer Portal', href: '#' },
+        { label: 'Shipping Guide', href: '#' },
+        { label: 'API Documentation', href: '#' }
       ]
     },
     {
       title: 'Resources',
       links: [
-        { label: 'Industry Insights', href: '/insights' },
-        { label: 'White Papers', href: '/whitepapers' },
-        { label: 'Case Studies', href: '/case-studies' },
-        { label: 'Webinars', href: '/webinars' },
-        { label: 'Blog', href: '/blog' },
-        { label: 'Downloads', href: '/downloads' }
+        { label: 'Industry Insights', href: '#' },
+        { label: 'White Papers', href: '#' },
+        { label: 'Case Studies', href: '#' },
+        { label: 'Webinars', href: '#' },
+        { label: 'Blog', href: '#' },
+        { label: 'Downloads', href: '#' }
       ]
     }
   ];
 
   const socialLinks = [
-    { icon: <Facebook className="w-5 h-5" />, href: 'https://facebook.com/logiflow', label: 'Facebook' },
-    { icon: <Twitter className="w-5 h-5" />, href: 'https://twitter.com/logiflow', label: 'Twitter' },
-    { icon: <Instagram className="w-5 h-5" />, href: 'https://instagram.com/logiflow', label: 'Instagram' },
-    { icon: <Linkedin className="w-5 h-5" />, href: 'https://linkedin.com/company/logiflow', label: 'LinkedIn' },
-    { icon: <Youtube className="w-5 h-5" />, href: 'https://youtube.com/logiflow', label: 'YouTube' }
+    { icon: <Facebook className="w-5 h-5" />, href: '#', label: 'Facebook' },
+    { icon: <Twitter className="w-5 h-5" />, href: '#', label: 'Twitter' },
+    { icon: <Instagram className="w-5 h-5" />, href: '#', label: 'Instagram' },
+    { icon: <Linkedin className="w-5 h-5" />, href: '#', label: 'LinkedIn' },
+    { icon: <Youtube className="w-5 h-5" />, href: '#', label: 'YouTube' }
   ];
 
   const certifications = [
@@ -147,19 +147,19 @@ const Footer: React.FC = () => {
               </div>
               <div className="flex items-center space-x-3">
                 <Mail className="w-5 h-5 text-secondary" />
-                <span className="text-gray-300">info@Veloxlogistics0@gmail.com</span>
+                <span className="text-gray-300">veloxlogistics0@gmail.com</span>
               </div>
               <div className="flex items-start space-x-3">
                 <MapPin className="w-5 h-5 text-secondary mt-1" />
                 <span className="text-gray-300">
-                  <strong>Head Office (UK):</strong><br />
-                  45 Bishopsgate, London EC2N 4AH,<br />
-                  United Kingdom
+                  <strong>Head Office:</strong><br />
+                  125 Avenue des Champs-Élysées,<br />
+                  75008 Paris, France
                   <br /><br />
                   <strong>Branch Office (US):</strong><br />
-                  123 Logistics Ave<br />
-                  Business District<br />
-                  New York, NY 10001
+                  456 Commerce Boulevard<br />
+                  Louisville, Kentucky<br />
+                  KY 40202
                 </span>
               </div>
 

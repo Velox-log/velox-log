@@ -60,7 +60,7 @@ const ContactPage: React.FC = () => {
     {
       id: 'headquarters',
       name: 'Headquarters',
-      address: '123 Logistics Ave, Business District, New York, NY 10001',
+      address: '456 Commerce Boulevard, Louisville, Kentucky, KY 40202',
       phone: '+1 (555) 123-4567',
       email: 'veloxlogistics0@gmail.com',
       hours: '8:00 AM - 6:00 PM',
@@ -201,24 +201,24 @@ const ContactPage: React.FC = () => {
             Ready to optimize your logistics? Let's discuss how Velox Logistics can help
             streamline your shipping and supply chain needs.
           </p>
-         <div className="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-6">
-  <a 
-    href="https://wa.me/447853756734" 
-    target="_blank" 
-    rel="noopener noreferrer"
-    className="flex items-center space-x-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-6 py-3 hover:bg-white/20 transition-colors cursor-pointer"
-  >
-    <Phone className="w-5 h-5" />
-    <span>+447 (853) 756-734</span>
-  </a>
-  <a 
-    href="mailto:veloxlogistics0@gmail.com"
-    className="flex items-center space-x-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-6 py-3 hover:bg-white/20 transition-colors cursor-pointer"
-  >
-    <Mail className="w-5 h-5" />
-    <span>veloxlogistics0@gmail.com</span>
-  </a>
-</div>
+          <div className="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-6">
+            <a 
+              href="https://wa.me/447853756734" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="flex items-center space-x-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-6 py-3 hover:bg-white/20 transition-colors cursor-pointer"
+            >
+              <Phone className="w-5 h-5" />
+              <span>+447 (853) 756-734</span>
+            </a>
+            <a 
+              href="mailto:veloxlogistics0@gmail.com"
+              className="flex items-center space-x-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-6 py-3 hover:bg-white/20 transition-colors cursor-pointer"
+            >
+              <Mail className="w-5 h-5" />
+              <span>veloxlogistics0@gmail.com</span>
+            </a>
+          </div>
         </div>
       </section>
 
@@ -450,7 +450,12 @@ const ContactPage: React.FC = () => {
               <div className="bg-white rounded-xl shadow-lg p-6">
                 <h3 className="text-xl font-bold text-gray-900 mb-6">Quick Contact</h3>
                 <div className="space-y-4">
-                  <div className="flex items-center space-x-3">
+                  <a 
+                    href="https://wa.me/447853756734"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center space-x-3 hover:bg-gray-50 p-2 rounded-lg transition-colors"
+                  >
                     <div className="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center">
                       <Phone className="w-5 h-5 text-primary" />
                     </div>
@@ -458,8 +463,11 @@ const ContactPage: React.FC = () => {
                       <div className="font-medium text-gray-900">Call Us</div>
                       <div className="text-gray-600">+447 (853) 756-734</div>
                     </div>
-                  </div>
-                  <div className="flex items-center space-x-3">
+                  </a>
+                  <a 
+                    href="mailto:veloxlogistics0@gmail.com"
+                    className="flex items-center space-x-3 hover:bg-gray-50 p-2 rounded-lg transition-colors"
+                  >
                     <div className="w-10 h-10 bg-secondary/10 rounded-lg flex items-center justify-center">
                       <Mail className="w-5 h-5 text-secondary" />
                     </div>
@@ -467,7 +475,7 @@ const ContactPage: React.FC = () => {
                       <div className="font-medium text-gray-900">Email Us</div>
                       <div className="text-gray-600">veloxlogistics0@gmail.com</div>
                     </div>
-                  </div>
+                  </a>
                   <div className="flex items-center space-x-3">
                     <div className="w-10 h-10 bg-green-100 rounded-lg flex items-center justify-center">
                       <Clock className="w-5 h-5 text-green-600" />
@@ -492,10 +500,22 @@ const ContactPage: React.FC = () => {
                           <MapPin className="w-4 h-4 mt-0.5 text-gray-400 flex-shrink-0" />
                           <span>{office.address}</span>
                         </div>
-                        <div className="flex items-center space-x-2">
+                        <a 
+                          href={`https://wa.me/${office.phone.replace(/\D/g, '')}`}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="flex items-center space-x-2 hover:text-primary transition-colors"
+                        >
                           <Phone className="w-4 h-4 text-gray-400" />
                           <span>{office.phone}</span>
-                        </div>
+                        </a>
+                        <a 
+                          href={`mailto:${office.email}`}
+                          className="flex items-center space-x-2 hover:text-primary transition-colors"
+                        >
+                          <Mail className="w-4 h-4 text-gray-400" />
+                          <span>{office.email}</span>
+                        </a>
                         <div className="flex items-center space-x-2">
                           <Clock className="w-4 h-4 text-gray-400" />
                           <span>{office.hours} ({office.timezone})</span>
