@@ -643,7 +643,6 @@ const AdminDashboard: React.FC = () => {
                         onChange={handleInputChange}
                         className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary"
                         placeholder="(555) 987-6543"
-                        required
                       />
                     </div>
                   </div>
@@ -739,7 +738,7 @@ const AdminDashboard: React.FC = () => {
                         onChange={handleInputChange}
                         className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary"
                         placeholder="(555) 123-4567"
-                        required
+                        
                       />
                     </div>
                   </div>
