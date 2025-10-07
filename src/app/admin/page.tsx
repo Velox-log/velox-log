@@ -496,7 +496,7 @@ const AdminDashboard: React.FC = () => {
                         onChange={handleInputChange}
                         className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary"
                         placeholder="e.g., New York, NY"
-                        required
+                        
                       />
                     </div>
                   </div>
@@ -514,7 +514,7 @@ const AdminDashboard: React.FC = () => {
                         onChange={handleInputChange}
                         className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary"
                         placeholder="e.g., Los Angeles, CA"
-                        required
+                        
                       />
                     </div>
                   </div>
@@ -528,7 +528,7 @@ const AdminDashboard: React.FC = () => {
                       value={formData.service}
                       onChange={handleInputChange}
                       className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary"
-                      required
+                      
                     >
                       <option>Ground Shipping</option>
                       <option>Air Freight</option>
@@ -549,7 +549,7 @@ const AdminDashboard: React.FC = () => {
                         value={formData.estimatedDelivery}
                         onChange={handleInputChange}
                         className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary"
-                        required
+                        
                       />
                     </div>
                   </div>
@@ -608,7 +608,7 @@ const AdminDashboard: React.FC = () => {
                         onChange={handleInputChange}
                         className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary"
                         placeholder="Full name"
-                        required
+                        
                       />
                     </div>
                   </div>
@@ -685,7 +685,7 @@ const AdminDashboard: React.FC = () => {
                         onChange={handleInputChange}
                         className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary"
                         placeholder="Full name"
-                        required
+                        
                       />
                     </div>
                   </div>
@@ -720,7 +720,7 @@ const AdminDashboard: React.FC = () => {
                         onChange={handleInputChange}
                         className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary"
                         placeholder="Full delivery address"
-                        required
+                       
                       />
                     </div>
                   </div>
@@ -882,7 +882,7 @@ const AdminDashboard: React.FC = () => {
                     setUpdateForm({ ...updateForm, status: e.target.value })
                   }
                   className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary"
-                  required
+                  
                 >
                   <option value="">Select status</option>
                   <option value="Package Received">Package Received</option>
@@ -906,7 +906,7 @@ const AdminDashboard: React.FC = () => {
                   }
                   className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary"
                   placeholder="e.g., Chicago, IL Distribution Center"
-                  required
+                  
                 />
               </div>
 
@@ -925,7 +925,7 @@ const AdminDashboard: React.FC = () => {
                   rows={4}
                   className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary resize-none"
                   placeholder="Provide detailed update information..."
-                  required
+                  
                 ></textarea>
               </div>
 
